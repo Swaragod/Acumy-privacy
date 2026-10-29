@@ -114,6 +114,33 @@
         grid-template-columns: 1fr 1fr;
         gap: 32px;
       }
+      .screenshots {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 28px 20px;
+        margin: 24px 0;
+      }
+      .screenshots figure {
+        min-width: 0;
+        margin: 0;
+      }
+      .screenshots a {
+        display: block;
+      }
+      .screenshots img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border: 1px solid #a5b5be;
+        border-radius: 12px;
+      }
+      .screenshots figcaption {
+        margin-top: 10px;
+        font-size: 0.95rem;
+      }
+      .screenshots figcaption span {
+        display: block;
+      }
       .note {
         color: #52616a;
         font-size: 0.95rem;
@@ -121,6 +148,11 @@
       footer {
         padding: 28px 0;
         border-top: 1px solid #d5dfe2;
+      }
+      @media (max-width: 760px) {
+        .screenshots {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
       }
       @media (max-width: 600px) {
         .wrap {
@@ -132,6 +164,13 @@
         .languages {
           grid-template-columns: 1fr;
           gap: 8px;
+        }
+      }
+      @media (max-width: 480px) {
+        .screenshots {
+          grid-template-columns: minmax(0, 1fr);
+          max-width: 360px;
+          margin-inline: auto;
         }
       }
       @media (prefers-color-scheme: dark) {
@@ -158,6 +197,7 @@
       <header>
         <div class="brand"><img src="icon.svg" alt="" width="48" height="48" />Acumy</div>
         <nav aria-label="Навигация / Navigation">
+          <a href="#screenshots">Скриншоты</a>
           <a href="#features">Возможности</a>
           <a href="#en" lang="en">English</a>
           <a href="privacy.html#ru">Конфиденциальность</a>
@@ -177,6 +217,97 @@
             ><a href="mailto:mytaks@mail.ru">Связаться с разработчиком</a>
           </div>
         </div>
+        <section id="screenshots" aria-labelledby="screenshots-title">
+          <h2 id="screenshots-title">Acumy на экране / <span lang="en">Screenshots</span></h2>
+          <p class="note">
+            Демонстрационные данные, интерфейс Acumy 1.30.0.
+            <span lang="en">Demo data, Acumy 1.30.0 interface.</span>
+          </p>
+          <div class="screenshots">
+            <figure>
+              <a href="screenshots/01-i-theme-free.png">
+                <img
+                  src="screenshots/01-i-theme-free.png"
+                  width="1080"
+                  height="1920"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Acumy: свободное время и 20 минут до встречи, светлая тема i theme"
+                />
+              </a>
+              <figcaption>Свободное время<span lang="en">Free time · i theme</span></figcaption>
+            </figure>
+            <figure>
+              <a href="screenshots/02-i-theme-tasks.png">
+                <img
+                  src="screenshots/02-i-theme-tasks.png"
+                  width="1080"
+                  height="1920"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Acumy: список пяти задач, которые можно успеть в свободное время"
+                />
+              </a>
+              <figcaption>
+                Задачи между событиями<span lang="en">Tasks between events</span>
+              </figcaption>
+            </figure>
+            <figure>
+              <a href="screenshots/03-system-schedule.png">
+                <img
+                  src="screenshots/03-system-schedule.png"
+                  width="1080"
+                  height="1920"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Acumy: встреча с командой, осталось 30 минут, системная тёмная тема"
+                />
+              </a>
+              <figcaption>
+                Расписание и отсчёт<span lang="en">Schedule and countdown · System theme</span>
+              </figcaption>
+            </figure>
+            <figure>
+              <a href="screenshots/04-retro-free.png">
+                <img
+                  src="screenshots/04-retro-free.png"
+                  width="1080"
+                  height="1920"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Acumy: свободное время с матричным отсчётом в теме Retro"
+                />
+              </a>
+              <figcaption>Тема Retro<span lang="en">Retro theme</span></figcaption>
+            </figure>
+            <figure>
+              <a href="screenshots/05-light-schedule.png">
+                <img
+                  src="screenshots/05-light-schedule.png"
+                  width="1080"
+                  height="1920"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Acumy: прогулка, осталось 35 минут, следующие этапы в светлой теме"
+                />
+              </a>
+              <figcaption>Светлая тема<span lang="en">Light theme</span></figcaption>
+            </figure>
+            <figure>
+              <a href="screenshots/06-dark-free.png">
+                <img
+                  src="screenshots/06-dark-free.png"
+                  width="1080"
+                  height="1920"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Acumy: свободное время и задачи в тёмной теме"
+                />
+              </a>
+              <figcaption>Тёмная тема<span lang="en">Dark theme</span></figcaption>
+            </figure>
+          </div>
+        </section>
         <section id="features">
           <h2>День в одном расписании</h2>
           <ul>
